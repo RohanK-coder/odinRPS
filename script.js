@@ -1,4 +1,4 @@
-console.log("Working");
+
 const getComputerChoice = () => {
     const choices = ["rock","paper","scissor"];
     return choices[Math.floor(Math.random() * choices.length)];
@@ -15,6 +15,29 @@ const playRound= (playerSelection,computerSelection) => {
     }
 
 }
-const playerSelection = prompt("Enter rock or paper or scissors");
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissor = document.querySelector("#scissor");
+const edit = document.querySelector("#winLose");
+
+rock.addEventListener("click",() => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = rock.textContent;
+    rock.setAttribute("style","font-size:20px");
+    edit.textContent = playRound(playerSelection, computerSelection);
+})
+paper.addEventListener("click",() => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = paper.textContent;
+    paper.setAttribute("style","font-size:20px");
+    edit.textContent = playRound(playerSelection, computerSelection);
+})
+scissor.addEventListener("click",() => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = scissor.textContent;
+    scissor.setAttribute("style","font-size:20px");
+    edit.textContent = playRound(playerSelection, computerSelection);
+})
+
+
+
